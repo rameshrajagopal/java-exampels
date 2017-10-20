@@ -1,6 +1,7 @@
 package com.example.MvcPatterns;
 
 import com.example.MvcController.Controller;
+import com.example.MvcModel.Database;
 import com.example.MvcModel.Model;
 import com.example.MvcView.View;
 
@@ -21,5 +22,8 @@ public class Application {
         model.clickMethod();
         model.addListener(controller);
         model.clickMethod();
+        Database db = Database.getInstance();
+        db.connect();
+        db.disconnect();
     }
 }
